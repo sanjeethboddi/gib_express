@@ -118,9 +118,13 @@ public class UploadController {
 				URL url = null;
 				StringBuilder result = new StringBuilder();
 				if(request.getSession().getAttribute("is_cilogon").toString()=="true")
-				loggedin_user=request.getSession().getAttribute("curusername").toString();
+				{
+				    loggedin_user=request.getSession().getAttribute("curusername").toString();
+				}
 				else
-				loggedin_user=request.getUserPrincipal().getName();
+				{
+				    loggedin_user=request.getUserPrincipal().getName();
+				}
 				
 				if(loggedin_user.contains(" "))
 					loggedin_user=loggedin_user.replace(" ","_");
@@ -659,9 +663,13 @@ public class UploadController {
 		}	
 			File f1 = null;
 		if(!file.exists())
-				f1 = new File(UPLOADED_FOLDER +"commonuser/jobs_left/"+ localFiles.getOriginalFilename());
+				{
+				    f1 = new File(UPLOADED_FOLDER +"commonuser/jobs_left/"+ localFiles.getOriginalFilename());
+				}
 			else
-				f1 = new File(UPLOADED_FOLDER +"commonuser/jobs_left/"+ file.getName());
+				{
+				    f1 = new File(UPLOADED_FOLDER +"commonuser/jobs_left/"+ file.getName());
+				}
 				File f2 = new File(UPLOADED_FOLDER +"commonuser/jobs_left/"+ randomFileName.toString()+".zip");
 				boolean b = f1.renameTo(f2);
 		

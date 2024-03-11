@@ -488,7 +488,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 					email=tmp.substring(tmp.indexOf(":")+2,tmp.length()-2);
 					//System.out.println("Email: "+email);
 				if(tmp.contains("idp_name"))
-					institute=tmp.substring(tmp.indexOf(":")+2,tmp.length()-1);
+					{
+					    institute=tmp.substring(tmp.indexOf(":")+2,tmp.length()-1);
+					}
 					//System.out.println("Institute: "+institute);
 			}
 			
